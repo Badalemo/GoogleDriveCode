@@ -1,0 +1,14 @@
+p {
+    text-align: right;
+    font-family: Arial;
+}
+h3 {
+    text-transform: uppercase;
+}
+body {
+    background-color: lightsalmon;
+}
+a {
+    font-size: 16px;
+    font-style: italic;
+}
