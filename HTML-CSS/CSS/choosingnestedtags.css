@@ -1,0 +1,53 @@
+/* Add your rules here */
+ul a{
+    color: #e7d231;
+    font-size: 25px;
+}
+h2 a{
+    color: inherit;
+}
+#featured h2{
+    font-style: italic;
+    color: #35eB99;
+}
+
+
+
+/* Add your rules ABOVE this line */
+
+/*Basic Page Styles */
+
+body{
+    background-image:url("https://codehs.com/uploads/ca63ccc6859f27d4476d5f0e22a853be");
+    background-size:cover;
+    color:white;
+    text-align:center;
+}
+
+
+h2{
+    font-weight:bolder;
+}
+
+ul{
+    list-style:none;
+}
+
+h1{
+    color:#cb4801;
+}
+
+#featured{
+    border:7px dotted #fc7d2e;
+}
+
+nav{
+    float:left;
+    border:7px outset black;
+    width:25%;
+}
+
+main{
+    float:right;
+    width:70%;
+}
