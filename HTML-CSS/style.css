@@ -1,42 +1,33 @@
-p {
-  text-align: right;
-  font-family: Arial;
+thead {
+  background-color: midnightblue;
+  color: white;
 }
-h3 {
-  text-transform: uppercase;
-}
-body {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Paleontology_at_Maryland_Science_Center.jpg/640px-Paleontology_at_Maryland_Science_Center.jpg);
-}
-a {
-  font-size: 16px;
-  font-style: italic;
-}
-iframe {
-  height: 600px;
-  width: 100%;
-}
-header {
-  background-color: lightsalmon;
-  border-style: solid;
-}
-main {
-  background-color: lightsalmon;
-  height: 80%;
-  width: 70%;
-}
+
 footer {
-  background-color: lightsalmon;
+  margin-top: 15%;
 }
-.job-title {
-  font-weight: bold;
-  color: maroon;
+
+#aliceblue {
+  background-color: AliceBlue;
 }
-.large-list {
-  font-size: 25px;
-  font-weight: bold;
+
+#lightseagreen {
+  background-color: LightSeaGreen;
 }
-ol ul {
-  font-size: 18px;
-  font-weight: normal;
+
+#orangered {
+  background-color: OrangeRed;
+}
+
+#antiquewhite {
+  background-color: AntiqueWhite;
+}
+
+#darkolivegreen {
+  background-color: DarkOliveGreen;
+}
+
+table {
+  border-style: ridge;
+  border-width: 15px;
 }

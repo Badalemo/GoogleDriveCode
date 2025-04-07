@@ -1,0 +1,32 @@
+/* Hide all but two of your favorite animals' captions */
+
+/* Other styles */
+img {
+  height: 250px;
+  width: 250px;
+}
+.caption {
+  border: 4px solid black;
+}
+body {
+  font-family: Helvetica;
+  font-size: 16px;
+  background-color: AliceBlue;
+}
+header {
+  font-family: cursive;
+  font-size: 32px;
+  text-align: center;
+}
+#dolphin-cap {
+  visibility: hidden;
+}
+#octopus-cap {
+  visibility: hidden;
+}
+#whale-cap {
+  visibility: visible;
+}
+#shark-cap {
+  visibility: visible;
+}
