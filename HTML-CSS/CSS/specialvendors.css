@@ -1,0 +1,45 @@
+/* Create a rule that will select the first li element
+    in a ul element using the :first-child selector */
+
+/*Basic Page Styles */
+
+body {
+  background-image: url("https://codehs.com/uploads/ca63ccc6859f27d4476d5f0e22a853be");
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+li:first-child {
+  color: green;
+  font-size: 24px;
+}
+
+h2 {
+  font-weight: bolder;
+}
+
+ul {
+  list-style: none;
+  padding: 1em;
+}
+
+h1 {
+  color: #cb4801;
+}
+
+nav {
+  float: left;
+  width: 25%;
+  text-align: left;
+}
+
+main {
+  float: right;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+a {
+  color: #e6d130;
+  font-size: 25px;
+}

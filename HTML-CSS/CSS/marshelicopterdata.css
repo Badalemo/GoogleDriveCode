@@ -1,0 +1,17 @@
+#max-altitude .meter {
+  background-color: #a2662a;
+}
+#max-altitude .feet {
+  background-color: peru;
+}
+#horizontal-distance .meter {
+  background-color: seagreen;
+}
+#horizontal-distance .feet {
+  background-color: mediumaquamarine;
+}
+
+th {
+  background-color: SteelBlue;
+  color: white;
+}

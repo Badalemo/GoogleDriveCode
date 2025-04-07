@@ -1,0 +1,20 @@
+.renaissance {
+  background-color: DarkCyan;
+}
+tr td {
+  color: white;
+}
+
+tr th {
+  font-weight: bolder;
+  font-size: 22px;
+}
+.impression {
+  background-color: mediumaquamarine;
+}
+.cubism {
+  background: darksalmon;
+}
+.surrealism {
+  background-color: palegoldenrod;
+}

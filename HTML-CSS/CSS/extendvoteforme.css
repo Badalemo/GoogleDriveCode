@@ -1,0 +1,31 @@
+ul {
+  list-style: square;
+}
+body {
+  font-size: 20px;
+}
+#seong:hover::after {
+  content: "  I am a great artist!";
+}
+#seong:active::after {
+  content: "  you made the right choice!";
+}
+#andile:hover::after {
+  content: "  I value your opinion!";
+}
+#andile:active::after {
+  content: "  This was the best choice!";
+}
+#shakti:hover::after {
+  content: "  I have a great sense of style!";
+}
+#shakti:active::after {
+  content: "  You have a great taste!";
+}
+li:hover::after {
+  background-color: PaleGoldenRod;
+}
+li:active::after {
+  background-color: #46c70b;
+  content: " You have made a good decision";
+}
