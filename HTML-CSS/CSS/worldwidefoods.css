@@ -1,0 +1,44 @@
+/*
+   Use the glasses' classes to apply filters to the glass images
+*/
+.even {
+  filter: blur(5px) grayscale(50%);
+}
+.odd {
+  filter: brightness(0.5) invert(100%);
+}
+/* Put your styles ABOVE this line */
+div.platter {
+  position: relative;
+  background-size: 100% 100%;
+  height: 200px;
+  width: 200px;
+  background-image: url("https://codehs.com/uploads/89cf9fba5b5692f3062d7b671ace4feb");
+}
+
+.label {
+  color: white;
+  text-shadow: 2px 2px 3px gray;
+  visibility: hidden;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+  position: inline;
+}
+
+body {
+  background-image: url("https://codehs.com/uploads/60fd1ac556621008606e14964e87dbd2");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-flex;
+}
