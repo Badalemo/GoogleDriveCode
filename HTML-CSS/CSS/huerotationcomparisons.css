@@ -1,0 +1,19 @@
+img {
+  height: 150px;
+}
+
+.hue-45 {
+  filter: hue-rotate(45deg);
+}
+.hue-90 {
+  filter: hue-rotate(90deg);
+}
+.hue-135 {
+  filter: hue-rotate(135deg);
+}
+.hue-180 {
+  filter: hue-rotate(180deg);
+}
+.hue-225 {
+  filter: hue-rotate(225deg);
+}
