@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  font-family: Arial;
+}
+.clickable:hover {
+  filter: brightness(150%);
+}
+.clickable:active {
+  filter: brightness(50%);
+}
+.unclickable {
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+button {
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 15px;
+  outline: none;
+}

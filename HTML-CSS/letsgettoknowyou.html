@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introductions</title>
+  </head>
+
+  <body>
+    <h3 id="welcome"></h3>
+    <h3 id="snack"></h3>
+    <h3 id="tv-show"></h3>
+
+    <script>
+      //Write your prompts here
+      let welcome = prompt("What is your name");
+      document.getElementById("welcome").innerHTML = "welcome " + welcome;
+      let snack = prompt("What is your favorite snack?");
+      document.getElementById("snack").innerHTML = "Your favorite snack is " + snack;
+      let tvShow = prompt("What is your favorite TV show?");
+      document.getElementById("tv-show").innerHTML = "Your favorite TV show is " + tvShow;
+    </script>
+  </body>
+</html>

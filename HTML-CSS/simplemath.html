@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      The sum of <span id="num_one"> 4 </span> and
+      <span id="num_two"> 6 </span> is:
+    </p>
+    <p id="result"></p>
+    <script>
+      //Write your code to solve this exercise here!
+      let numOne = document.getElementById("num_one").innerHTML;
+      let numTwo = document.getElementById("num_two").innerHTML;
+      let result = parseInt(numOne) + parseInt(numTwo);
+      document.getElementById("result").innerHTML = result;
+    </script>
+  </body>
+</html>

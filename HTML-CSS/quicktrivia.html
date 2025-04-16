@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quick Trivia</title>
+  </head>
+
+  <body>
+    <script>
+      //Write your trivia questions here!
+      let numberGotten = 0;
+      let question1 = prompt("What is the capital of France?").toLowerCase();
+      if (question1 == "paris") {
+        alert("Correct! Paris is the capital of France.");
+        numberGotten++;
+      } else {
+        alert("Incorrect. The correct answer is Paris.");
+      }
+      let question2 = prompt(
+        "What is the largest planet in our solar system?"
+      ).toLowerCase();
+      if (question2 == "jupiter") {
+        alert("Correct! Jupiter is the largest planet in our solar system.");
+        numberGotten++;
+      } else {
+        alert("Incorrect. The correct answer is Jupiter.");
+      }
+      question3 = prompt("What is the chemical symbol for gold?").toLowerCase();
+      if (question3 == "au") {
+        alert("Correct! The chemical symbol for gold is Au.");
+        numberGotten++;
+      } else {
+        alert("Incorrect. The correct answer is Au.");
+      }
+      alert("You got " + numberGotten + " out of 3 questions correct!");
+    </script>
+  </body>
+</html>
