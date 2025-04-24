@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        height: 98%;
+        width: 99%;
+      }
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+      }
+      div div {
+        width: 32%;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div></div>
+      <div id="top"></div>
+      <div></div>
+      <div id="left"></div>
+      <div></div>
+      <div id="right"></div>
+      <div></div>
+      <div id="bottom"></div>
+      <div></div>
+    </div>
+
+    <script>
+      //Write your colorDown function here
+      function colorDown(event) {
+        if (
+          event.key === "ArrowUp" &&
+          document.getElementById("top").style.backgroundColor !== "yellow"
+        ) {
+          document.getElementById("top").style.backgroundColor = "yellow";
+        } else if (
+          event.key === "ArrowUp" &&
+          document.getElementById("top").style.backgroundColor === "yellow"
+        ) {
+          document.getElementById("top").style.backgroundColor = "white";
+        } else if (
+          event.key === "ArrowDown" &&
+          document.getElementById("bottom").style.backgroundColor !== "yellow"
+        ) {
+          document.getElementById("bottom").style.backgroundColor = "yellow";
+        } else if (
+          event.key === "ArrowDown" &&
+          document.getElementById("bottom").style.backgroundColor === "yellow"
+        ) {
+          document.getElementById("bottom").style.backgroundColor = "white";
+        } else if (
+          event.key === "ArrowLeft" &&
+          document.getElementById("left").style.backgroundColor !== "yellow"
+        ) {
+          document.getElementById("left").style.backgroundColor = "yellow";
+        } else if (
+          event.key === "ArrowLeft" &&
+          document.getElementById("left").style.backgroundColor === "yellow"
+        ) {
+          document.getElementById("left").style.backgroundColor = "white";
+        } else if (
+          event.key === "ArrowRight" &&
+          document.getElementById("right").style.backgroundColor !== "yellow"
+        ) {
+          document.getElementById("right").style.backgroundColor = "yellow";
+        } else if (
+          event.key === "ArrowRight" &&
+          document.getElementById("right").style.backgroundColor === "yellow"
+        ) {
+          document.getElementById("right").style.backgroundColor = "white";
+        }
+      }
+      document.addEventListener("keydown", colorDown);
+    </script>
+  </body>
+</html>

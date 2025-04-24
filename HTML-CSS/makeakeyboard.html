@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #textbox {
+        margin: 10px;
+        border: 1px solid black;
+        height: 200px;
+      }
+      #keyboard {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="keyboard"></div>
+
+    <div id="textbox"></div>
+  </body>
+
+  <script>
+    var alpha = [
+      "q",
+      "w",
+      "e",
+      "r",
+      "t",
+      "y",
+      "u",
+      "i",
+      "o",
+      "p",
+      "a",
+      "s",
+      "d",
+      "f",
+      "g",
+      "h",
+      "j",
+      "k",
+      "l",
+      ";",
+      "'",
+      "z",
+      "x",
+      "c",
+      "v",
+      "b",
+      "n",
+      "m",
+      ",",
+      ".",
+      "\u00A0",
+    ];
+
+    //copy makeButton and makeText functions from previous exercise
+    for (let i = 0; i < alpha.length; i++) {
+      makeButton(alpha[i]);
+
+      if (alpha[i] == "p" || alpha[i] === "'" || alpha[i] === ".") {
+        let br = document.createElement("br");
+        keyboard.appendChild(br);
+      }
+    }
+    function makeButton(text) {
+      let keyboard = document.getElementById("keyboard");
+      let button = document.createElement("button");
+      keyboard.appendChild(button);
+      button.innerHTML = text === "\u00A0" ? "Space" : text;
+      if (text === "\u00A0") {
+        button.style.width = "100px";
+      }
+      button.addEventListener("click", function () {
+        makeText(text === "\u00A0" ? " " : text);
+      });
+    }
+    //create makeButton function
+    /*function makeButton(text) {
+      let keyboard = document.getElementById("keyboard");
+      let button = document.createElement("button");
+      keyboard.appendChild(button);
+      button.innerHTML = text;
+      button.addEventListener("click", function () {
+        makeText(text);
+      });
+    }
+      */
+
+    function makeText(text) {
+      let textbox = document.getElementById("textbox");
+      textbox.innerHTML += text;
+    }
+
+    //create makeKeyboard function
+  </script>
+</html>

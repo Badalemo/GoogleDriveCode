@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      div {
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click the box to see it change color!</h2>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!--Try adding more divs, you'll see that they will all change color!-->
+
+    <script>
+      let divList = document.getElementsByTagName("div");
+      //iterate through the list to get each div
+      for (let i = 0; i < divList.length; i++) {
+        //give each element in list the same attribute
+        divList[i].addEventListener("click", turnRed);
+      }
+      function turnRed() {
+        this.style.backgroundColor = "red";
+      }
+    </script>
+  </body>
+</html>

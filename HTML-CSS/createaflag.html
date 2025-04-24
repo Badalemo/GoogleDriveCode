@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create a Flag</title>
+    <style>
+      html,
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        height: 100%;
+      }
+      div {
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="color-one"></div>
+    <div id="color-two"></div>
+    <div id="color-three"></div>
+    <script>
+      //Add your code here!
+      let firstColorValue = prompt(
+        "What color do you want for the first stripe?"
+      );
+      let secondColorValue = prompt(
+        "What color do you want for the second stripe?"
+      );
+      let thirdColorValue = prompt(
+        "What color do you want for the third stripe?"
+      );
+      let firstColor = document.getElementById("color-one");
+      firstColor.setAttribute("style", "background-color:" + firstColorValue);
+      //or
+      firstColor.style.backgroundColor = firstColorValue;
+      let secondColor = document.getElementById("color-two");
+      secondColor.setAttribute("style", "background-color:" + secondColorValue);
+      let thirdColor = document.getElementById("color-three");
+      thirdColor.setAttribute("style", "background-color:" + thirdColorValue);
+    </script>
+  </body>
+</html>

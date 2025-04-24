@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="web-page">Check out my website</p>
+    <script>
+      //Add your code here:
+      let webPage = document.getElementById("web-page");
+      let link = document.createElement("a");
+      link.setAttribute("href", "https://www.codehs.com/sandbox");
+      link.innerHTML = "here!";
+      webPage.innerHTML = "Check out my website " + link.outerHTML;
+    </script>
+  </body>
+</html>

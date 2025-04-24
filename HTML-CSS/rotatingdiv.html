@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      #rotating-box {
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="rotating-box"></div>
+    </div>
+    <script>
+      //Write your code here!
+      let rotatingBox = document.getElementById("rotating-box");
+      let angle = 0;
+      let rotationA = setInterval(rotate, 100);
+      function rotate() {
+        angle += 10;
+        rotatingBox.style.transform = "deg";
+        angle += 10;
+      }
+    </script>
+  </body>
+</html>

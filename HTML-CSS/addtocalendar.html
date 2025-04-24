@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      td {
+        height: 150px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" id="chores">
+      <tr id="days">
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+      </tr>
+      <tbody id="tbody">
+        <tr id="tasks">
+          <td id="chores1"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      //Write your code here!
+      let choresTable = document.getElementById("chores");
+      let tasks = document.getElementById("tasks");
+      let chores1 = document.getElementById("chores1");
+      let choreList1 = document.createElement("ul");
+      chores1.appendChild(choreList1);
+      choreList1.innerHTML = "<li>Do the dishes</li>";
+      let newRow = document.createElement("tr");
+      newRow.innerHTML =
+        "<td>Do the dishes</td><td>Take out the trash</td><td>Walk the dog</td><td>Clean the room</td><td>Make the bed</td>";
+      let tbody = document.getElementById("tbody");
+      tbody.appendChild(newRow);
+    </script>
+  </body>
+</html>
