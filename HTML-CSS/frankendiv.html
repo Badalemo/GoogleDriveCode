@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        height: 95%;
+      }
+      #franken-div {
+        height: 50px;
+        width: 50px;
+        background-color: green;
+        position: relative;
+      }
+      button {
+        margin: 5px;
+        padding: 10px;
+        font-size: 15px;
+        font-family: creepster, sans-serif;
+      }
+      .container {
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
+      integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
+      crossorigin="anonymous"
+    >
+      //Allows for color animation!
+    </script>
+    <script src="https://use.edgefonts.net/creepster.js">
+      //Allows for the spooky font!
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <button id="square">Square</button>
+      <button id="circle">Circle</button>
+      <button id="rect">Rectangle</button>
+      <button id="size">Change Size</button>
+      <button id="color">Change Color</button>
+    </div>
+    <div class="container">
+      <div id="franken-div"></div>
+    </div>
+    <script>
+      //Write your code here!
+      let divHeight = $("#franken-div").height();
+      let divWidth = $("#franken-div").width();
+      let div = $("#franken-div");
+      div.css("background-color", "green");
+      $("#square").click(makeSquare);
+      function makeSquare() {
+        divHeight = divWidth;
+        div.animate({ height: divHeight, borderRadius: "0px" }, 1000);
+      }
+      $("#circle").click(makeCircle);
+      function makeCircle() {
+        div.animate({ borderRadius: "50%" }, 1000);
+      }
+      $("#rect").click(makeRectangle);
+      function makeRectangle() {
+        divHeight *= 2;
+        div.animate({ height: divHeight, borderRadius: "0px" }, 1000);
+      }
+      $("#size").click(changeSize);
+      function changeSize() {
+        div.animate({ width: prompt("Enter a width") }, 1000);
+        div.animate({ height: prompt("Enter a height") }, 1000);
+      }
+      $("#color").click(changeColor);
+      function changeColor() {
+        let color = prompt("Enter a color:");
+        div.animate({ backgroundColor: color }, 1000);
+      }
+    </script>
+  </body>
+</html>

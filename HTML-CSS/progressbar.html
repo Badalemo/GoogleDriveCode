@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      #progress-bar {
+        border: 1px solid black;
+        height: 30px;
+        width: 300px;
+      }
+      #progress {
+        background-color: green;
+        height: 30px;
+        width: 10px;
+        display: none;
+      }
+      img {
+        height: 300px;
+        width: 400px;
+        display: none;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #progress-button {
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <button id="progress-button">Download Photo</button>
+      <img src="https://codehs.com/uploads/4e973cdbfaecbfea83105997f1bde5e1" />
+    </div>
+    <script>
+      //Write your code here!
+      let progressContainerWidth = $("#progress-bar").width();
+      let progressWidth = $("#progress").width();
+      let progressButton = $("#progress-button");
+      progressButton.click(downloadPhotoProgress);
+      function downloadPhotoProgress() {
+        $("#progress").css("display", "block");
+        $("#progress").animate(
+          { width: progressContainerWidth },
+          1000,
+          function () {
+            $("img").css("display", "block");
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

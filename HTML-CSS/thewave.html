@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      .move {
+        height: 50px;
+        width: 15%;
+        border: solid 1px black;
+        background-color: gray;
+        margin: 5px;
+        position: relative;
+        color: white;
+      }
+      #container {
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="move" id="div1"></div>
+      <div class="move" id="div2"></div>
+      <div class="move" id="div3"></div>
+      <div class="move" id="div4"></div>
+      <div class="move" id="div5"></div>
+      <div class="move" id="div6"></div>
+      <div class="move" id="div7"></div>
+      <div class="move" id="div8"></div>
+    </div>
+    <script>
+      //This will grab the height of the window of the browser
+      var HEIGHT = $(window).height();
+      $("#div1").animate({ top: HEIGHT }, 1000, function () {
+        $("#div2").animate({ top: HEIGHT }, 1000, function () {
+          $("#div1").animate({ top: "0px" }, 1000, function () {
+            $("#div3").animate({ top: HEIGHT }, 1000, function () {
+              $("#div2").animate({ top: "0px" }, 1000, function () {
+                $("#div4").animate({ top: HEIGHT }, 1000, function () {
+                  $("#div3").animate({ top: "0px" }, 1000, function () {
+                    $("#div5").animate({ top: HEIGHT }, 1000, function () {
+                      $("#div4").animate({ top: "0px" }, 1000, function () {
+                        $("#div6").animate({ top: HEIGHT }, 1000, function () {
+                          $("#div5").animate({ top: "0px" }, 1000, function () {
+                            $("#div7").animate(
+                              { top: HEIGHT },
+                              1000,
+                              function () {
+                                $("#div6").animate(
+                                  { top: "0px" },
+                                  1000,
+                                  function () {
+                                    $("#div8").animate(
+                                      { top: HEIGHT },
+                                      1000,
+                                      function () {
+                                        $("#div7").animate(
+                                          { top: "0px" },
+                                          1000,
+                                          function () {
+                                            $("#div8").animate(
+                                              { top: "0px" },
+                                              1000
+                                            );
+                                          }
+                                        );
+                                      }
+                                    );
+                                  }
+                                );
+                              }
+                            );
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

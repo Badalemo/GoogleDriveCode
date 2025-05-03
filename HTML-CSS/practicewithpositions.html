@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Practice with Positions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="circle"></div>
+    <div id="square"></div>
+    <div id="triangle"></div>
+    <script>
+      let circle = document.getElementById("circle");
+      let square = document.getElementById("square");
+      let triangle = document.getElementById("triangle");
+      square.style.position = "relative";
+      square.style.left = "50%";
+      square.style.top = window.innerHeight;
+      square.style.left = window.innerWidth / 2;
+      circle.style.position = "absolute";
+      triangle.style.position = "absolute";
+      triangle.style.left = window.innerWidth / 2;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #container {
+        display: flex;
+      }
+      div div {
+        height: 50px;
+        width: 50px;
+      }
+      #div-creator {
+        margin: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="div-creator">Add a Div!</button>
+    <div id="container"></div>
+    <script>
+      var timer;
+      var DIV_WIDTH = 50;
+      var numSquares = 0;
+      let divCreator = document.getElementById("div-creator");
+      let divColor = "";
+      divCreator.addEventListener("click", createDiv);
+      function createDiv() {
+        if (numSquares === 0) {
+          let newDiv = document.createElement("div");
+          let container = document.getElementById("container");
+          let divColor = prompt("Enter a color for the div:");
+          container.appendChild(newDiv);
+          newDiv.style.backgroundColor = divColor;
+          newDiv.style.position = "relative";
+          numSquares++;
+        } else if (numSquares > 0) {
+          let newDiv = document.createElement("div");
+          let container = document.getElementById("container");
+          let divColor = prompt("Enter a color for the div:");
+          container.appendChild(newDiv);
+          newDiv.style.backgroundColor = divColor;
+          newDiv.style.position = "absolute";
+          timer = setInterval(function () {
+            newDiv.style.left = numSquares * DIV_WIDTH + "px";
+            clearInterval(timer);
+            numSquares++;
+          }, 10);
+        }
+      }
+    </script>
+  </body>
+</html>

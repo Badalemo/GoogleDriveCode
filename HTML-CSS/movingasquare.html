@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        height: 98%;
+      }
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      #square {
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="square" tabindex="0"></div>
+    </div>
+
+    <script>
+      //Write your code here.
+      let square = document.getElementById("square");
+      let container = document.getElementById("container");
+      square.style.position = "relative";
+      let topPosition = 0;
+      let sidePosition = 0;
+      square.addEventListener("keydown", moveSquare);
+      function moveSquare(event) {
+        if (event.key === "ArrowUp") {
+          topPosition -= 10;
+          square.style.top = topPosition + "px";
+        } else if (event.key === "ArrowDown") {
+          topPosition += 10;
+          square.style.top = topPosition + "px";
+        } else if (event.key === "ArrowLeft") {
+          sidePosition -= 10;
+          square.style.left = sidePosition + "px";
+        } else if (event.key === "ArrowRight") {
+          sidePosition += 10;
+          square.style.left = sidePosition + "px";
+        }
+      }
+    </script>
+  </body>
+</html>

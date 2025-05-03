@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      th,
+      td {
+        border-bottom: solid 1px black;
+        padding: 10px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <th>Project Task</th>
+        <th>Timeline</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Draft Proposal</td>
+        <td>2 weeks</td>
+        <td>Complete</td>
+      </tr>
+      <tr>
+        <td>Pitch to Clients</td>
+        <td>1 day</td>
+        <td>Incomplete</td>
+      </tr>
+      <tr>
+        <td>Develop Marketing Strategy</td>
+        <td>4 weeks</td>
+        <td>Complete</td>
+      </tr>
+      <tr>
+        <td>Film Marketing Video</td>
+        <td>2-3 days</td>
+        <td>Incomplete</td>
+      </tr>
+    </table>
+    <script>
+      //Write your code here.
+      $("tr").each(function (index) {
+        if (index !== 0) {
+            let status = $(this).find("td:nth-child(3)").text();
+            if (status === "Complete") {
+                $(this).find("td:nth-child(3)").css("background-color", "lightgreen");
+            }
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      button {
+        background-color: lightblue;
+        border-radius: 5px;
+        color: blue;
+        padding: 5px;
+        width: 20%;
+        margin: 5px;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .rect {
+        border: 1px solid black;
+        height: 30px;
+        margin: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <button id="width-fix">Fix Widths</button>
+    </div>
+    <script src="randomRects.js">
+      //script that loads random rectangles
+    </script>
+    <script>
+      //Write your code here!
+      $("#width-fix").click(equalizeWidths);
+      function equalizeWidths() {
+        $(".rect").each(function (index) {
+          let width = $(this).width();
+          if (width < 200) {
+            $(this).css("width", "200px");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    >
+      //jQuery is added using this link in the header
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li id="first" class="one">Do Homework</li>
+      <li class="two">Read</li>
+      <li class="one">Eat Dinner</li>
+      <li attr="attribute">Watch TV</li>
+      <li class="two">Sleep</li>
+    </ul>
+    <ol>
+      <li>Another Task</li>
+      <li>Man I'm busy...</li>
+    </ol>
+    <script>
+      //jQcuery allows programmers to select elements easily in the DOM.
+      //Select by element
+      $("li").css("font-weight", "bold");
+      //Select by class
+      $(".two").css("text-decoration", "line-through");
+      //Select by id
+      $("#first").css("color", "yellow");
+      //Select by attribute
+      $("[attr]").css("color", "red");
+      //Select by children
+      $("ol li").css("font-size", "20px");
+    </script>
+  </body>
+</html>
