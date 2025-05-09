@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <h2>How many times have you visited this site?</h2>
+    <p id="visits"></p>
+
+    <script>
+      //Write your code here!
+      if (localStorage.getItem("visits") === null) {
+        localStorage.setItem("visits", 1);
+        $("#visits").text("This is your first visit!");
+      } else {
+        localStorage.setItem(
+          "visits",
+          parseInt(localStorage.getItem("visits")) + 1
+        );
+        $("#visits").text(
+          "You have visited this site " +
+            localStorage.getItem("visits") +
+            " times."
+        );
+      }
+    </script>
+  </body>
+</html>

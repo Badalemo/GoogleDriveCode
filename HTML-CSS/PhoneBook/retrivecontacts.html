@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>My Phonebook</h1>
+      <div id="button-container">
+        <button id="add">Add Contact</button>
+        <button id="retrieve">Retrieve Contact</button>
+      </div>
+      <div id="contact-reveal"></div>
+    </div>
+    <script>
+      //Copy your code from the last exercise
+      let phonebook = [];
+      if (localStorage.phonebook) {
+        phonebook = JSON.parse(localStorage.phonebook); // Retrieve the phone book from local storage
+      } else {
+        localStorage.phonebook = JSON.stringify(phonebook);
+      }
+      $("#add").click(function () {
+        addContact(); // Call the function to add a new contact to the phone book
+      });
+      $("#retrieve").click(function () {
+        retrieveContact(); // Call the function to retrieve a contact from the phone book
+      });
+
+      function addContact() {
+        //Copy your function from the last exercise.
+        let firstNameInput = prompt("Enter contact name: ");
+        let lastNameInput = prompt("Enter contact last name: ");
+        let phoneNumberInput = prompt("Enter contact phone number: ");
+        let contact = {
+          firstName: firstNameInput,
+          lastName: lastNameInput,
+          phoneNumber: phoneNumberInput,
+        };
+        phonebook.push(contact);
+        localStorage.phonebook = JSON.stringify(phonebook); // Save the updated phone book to local storage
+      }
+
+      function contactExists(first, last) {
+        for (let i = 0; i < phonebook.length; i++) {
+          if (
+            phonebook[i].firstName.toLowerCase() === first.toLowerCase() &&
+            phonebook[i].lastName.toLowerCase() === last.toLowerCase()
+          ) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function retrieveContact(first, last) {
+        first = prompt("Enter contact first name: ");
+        last = prompt("Enter contact last name: ");
+        if (contactExists(first, last)) {
+          for (let i = 0; i < phonebook.length; i++) {
+            if (
+              phonebook[i].firstName.toLowerCase() === first.toLowerCase() &&
+              phonebook[i].lastName.toLowerCase() === last.toLowerCase()
+            ) {
+              let phoneNumber = phonebook[i].phoneNumber;
+              $("#contact-reveal").append(
+                "<hr>" +
+                  "first name: " +
+                  phonebook[i].firstName +
+                  "<br />" +
+                  "Last name: " +
+                  phonebook[i].lastName +
+                  "<br />" +
+                  "phone number: " +
+                  phonebook[i].phoneNumber
+              );
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

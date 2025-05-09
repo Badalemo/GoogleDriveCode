@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <button id="add">Add New Contact</button>
+
+    <script>
+      let phonebook = [];
+      if (localStorage.phonebook) {
+        phonebook = JSON.parse(localStorage.phonebook); // Retrieve the phone book from local storage
+      } else {
+        localStorage.phonebook = JSON.stringify(phonebook);
+      }
+      $("#add").click(function () {
+        addContact(); // Call the function to add a new contact to the phone book
+      });
+      function addContact() {
+        let firstNameInput = prompt("Enter contact name: ");
+        let lastNameInput = prompt("Enter contact last name: ");
+        let phoneNumberInput = prompt("Enter contact phone number: ");
+        let contact = {
+          firstName: firstNameInput,
+          lastName: lastNameInput,
+          phoneNumber: phoneNumberInput,
+        };
+        phonebook.push(contact);
+        localStorage.phonebook = JSON.stringify(phonebook); // Save the updated phone book to local storage
+      }
+    </script>
+  </body>
+</html>

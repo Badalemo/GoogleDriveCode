@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+      }
+      div div {
+        border: 1px solid black;
+        height: 50px;
+        width: 15%;
+        margin: 3px;
+        text-align: center;
+      }
+      .active {
+        background-color: lightblue;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="highlight">0</div>
+      <div class="highlight">1</div>
+      <div class="highlight">2</div>
+      <div class="highlight">3</div>
+      <div class="highlight">4</div>
+      <div class="highlight">5</div>
+      <div class="highlight">6</div>
+      <div class="highlight">7</div>
+    </div>
+    <script>
+      // Initialize or load the active list
+      var isActiveList = localStorage.activeList;
+      if (localStorage.activeList) {
+        isActiveList = JSON.parse(localStorage.activeList);
+      } else {
+        isActiveList = [false, false, false, false, false, false, false];
+      }
+
+      // Apply .active class on page load
+      $("#container .highlight").each(function (i) {
+        if (isActiveList[i]) {
+          $(this).addClass("active");
+        }
+      });
+
+      // Handle click events
+      $("#container").on("click", ".highlight", function () {
+        var index = $(this).index();
+        var isActive = $(this).hasClass("active");
+        if (isActive) {
+          $(this).removeClass("active");
+          isActiveList[index] = false;
+        } else {
+          $(this).addClass("active");
+          isActiveList[index] = true;
+        }
+        localStorage.setItem("activeList", JSON.stringify(isActiveList));
+      });
+    </script>
+  </body>
+</html>

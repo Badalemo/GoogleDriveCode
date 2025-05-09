@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      button {
+        border-radius: 25px;
+        background-color: lightgray;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 15px;
+        transition: background-color 1s ease-out;
+      }
+      hr {
+        width: 100%;
+      }
+      button:hover {
+        background-color: green;
+      }
+      button:focus {
+        outline: none;
+      }
+      #container,
+      #previous-scores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <h2>Your Score Tracker</h2>
+      <button id="record-score">Record a score!</button>
+      <p id="latest-score"></p>
+      <hr />
+    </div>
+    <div id="previous-scores"></div>
+    <script>
+      if (localStorage.getItem("scores") === null) {
+        localStorage.setItem("scores", JSON.stringify([]));
+      }
+      $("#record-score").click(function () {
+        let score = prompt("Enter your score:");
+        let date = prompt("Enter the date (YYYY-MM-DD):");
+        let scores = JSON.parse(localStorage.getItem("scores"));
+        scores[scores.length] = score + " on " + date;
+        $("#latest-score").text(
+          "Your latest score is: " + score + " on " + date
+        );
+        localStorage.setItem("scores", JSON.stringify(scores));
+        alert("Your scores are: " + localStorage.scores);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <button id="change-background">Change Background Color</button>
+    </div>
+
+    <script>
+      //Write your code here!
+      let backgroundColors = prompt("Enter a color:");
+      localStorage.setItem("backgroundColor", backgroundColors);
+      $("#change-background").click(function () {
+        $("html").css(
+          "background-color",
+          localStorage.getItem("backgroundColor")
+        );
+      });
+    </script>
+  </body>
+</html>
