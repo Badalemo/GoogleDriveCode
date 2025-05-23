@@ -28,6 +28,9 @@
       $("#retrieve").click(function () {
         retrieveContact(); // Call the function to retrieve a contact from the phone book
       });
+      $("#print").click(function () {
+        printContacts(); // Call the function to print all contacts in the phone book
+      });
 
       function addContact() {
         //copy your code from the previous exercise
@@ -84,10 +87,19 @@
       }
 
       function printContacts() {
+        $("#contact-reveal").empty(); // Clear the contact reveal area
         for (let i = 0; i < phonebook.length; i++) {
-            $("#contact-reveal").append(
-                "<hr>" + "first name: " + phonebook[i].firstName + "br />" + "Last name: " + phonebook[i].lastName + "<br />" +
-            );
+          $("#contact-reveal").append(
+            "<hr>" +
+              "first name: " +
+              phonebook[i].firstName +
+              "<br />" +
+              "Last name: " +
+              phonebook[i].lastName +
+              "<br />" +
+              "phone number: " +
+              phonebook[i].phoneNumber
+          );
         }
       }
     </script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="to-do">
+      <h4>To Do List!</h4>
+    </div>
+    <hr />
+    <div>
+      <form id="task-form">
+        <label for="task">Enter your task here:</label><br />
+        <input type="text" name="task" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <br />
+    <div id="to-do-list"></div>
+  </body>
+  <script>
+    let taskList = JSON.parse(localStorage.getItem("taskList")) || []; // Retrieve tasks from local storage
+    let completedTasks =
+      JSON.parse(localStorage.getItem("completedTasks")) || []; // Retrieve completed tasks from local storage
+
+    function displayTasks() {
+      $("#to-do-list").empty();
+      taskList.forEach(function (task) {
+        $("#to-do-list").append("<p>" + task + "</p>");
+      });
+    }
+    //Copy your code from the previous exercise
+    $("#task-form").submit(function (event) {
+      event.preventDefault();
+      const formData = $("#task-from").serializeArray();
+      const taskInput = document.querySelector("input[name='task']");
+      const newTask = taskInput.value.trim();
+      if (newTask != "") {
+        taskList.push(newTask);
+        localStorage.setItem("taskList", JSON.stringify(taskList)); // Save tasks to local storage
+        displayTasks();
+        taskInput.value = "";
+      }
+    });
+    $("#to-do-list").on("click", "p", function () {
+      const taskText = $(this).text();
+      $(this).css("text-decoration", "line-through");
+
+      const indexInCompleted = completedTasks.indexOf(taskText);
+
+      if (indexInCompleted === -1) {
+        completedTasks.push(taskText);
+      } else {
+        completedTasks.splice(indexInCompleted, 1);
+      }
+      localStorage.setItem("completedTasks", JSON.stringify(completedTasks)); // Save completed tasks to local storage
+    });
+    function removeCompletedTasksOnLoad() {
+      const remainingTasks = [];
+      for (let i = 0; i < taskList.length; i++) {
+        const currentTask = taskList[i];
+        let isCompleted = false;
+
+        for (let j = 0; j < completedTasks.length; j++) {
+          if (currentTask === completedTasks[j]) {
+            isCompleted = true;
+          }
+        }
+        if (!isCompleted) {
+          remainingTasks.push(currentTask);
+        }
+      }
+      taskList = remainingTasks;
+      localStorage.setItem("taskList", JSON.stringify(taskList)); // Save remaining tasks to local storage
+      displayTasks();
+    }
+    removeCompletedTasksOnLoad();
+    // Call the function to remove completed tasks on page load
+  </script>
+</html>

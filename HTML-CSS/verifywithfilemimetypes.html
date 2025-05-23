@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Attach a File</title>
+  </head>
+
+  <body>
+    <h2>Attach a File for Upload</h2>
+    <h3>Verify with File MIME Types</h3>
+    <form>
+      <input type="file" id="file-selector" accept=".png" />
+    </form>
+
+    <ul id="output"></ul>
+
+    <script>
+      const OUTPUT = document.getElementById("output");
+      if (window.FileList && window.File) {
+        document
+          .getElementById("file-selector")
+          .addEventListener("change", (event) => {
+            output.innerHTML = "";
+            for (const FILE of event.target.files) {
+              const LI = document.createElement("li");
+              const NAME = file.name ? file.name : "NOT SUPPORTED";
+              const TYPE = file.type ? file.type : "NOT SUPPORTED";
+              const SIZE = file.size ? file.size : "NOT SUPPORTED";
+
+              // Add output content on the line below to print each file's name, MIME type, and file size.
+              li.textContent =
+                "'NAME: ' + name + ' | MIME TYPE: ' + type + ' | SIZE: ' + size";
+
+              output.appendChild(li);
+            }
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Page Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div id="to-do">
+      <h4>To Do List!</h4>
+    </div>
+    <hr />
+    <div>
+      <form id="task-form">
+        <label for="task">Enter your task here:</label><br />
+        <input type="text" name="task" />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <br />
+    <div id="to-do-list"></div>
+  </body>
+  <script>
+    $("#task-form").submit(function (event) {
+      event.preventDefault();
+      let taskList = $("#task-form").serializeArray();
+      for (let i = 0; i < taskList.length; i++) {
+        let task = taskList[i].value;
+        $("#to-do-list").append("<p>" + task + "</p>");
+      }
+    });
+  </script>
+</html>
